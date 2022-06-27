@@ -6,3 +6,4 @@ numpy
 pandas
 pandas_stubs
 scikit_learn
+gunicorn
