@@ -5,32 +5,8 @@ from dash import dcc
 from dash import html
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
-import numpy as np
-import pickle
-
-import numpy as np
 import pandas as pd
 import pickle
-import os
-
-
-import time
-
-
-
-from sklearn.preprocessing import StandardScaler
-from sklearn import svm
-
-from sklearn import metrics
-
-from sklearn.metrics import fbeta_score
-from sklearn.metrics import make_scorer
-
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import MinMaxScaler
-
-#picking models for prediction.
-from sklearn.svm import SVC
 
 ### Setup ###################################################
 app = dash.Dash(__name__)
@@ -55,34 +31,6 @@ numerical_columns = ['Age',
  'FastingBS',
  'MaxHR',
  'Oldpeak']
-### App Layout ###############################################
-
-# sex_items = [
-#     dbc.DropdownMenuItem("M"),
-#     dbc.DropdownMenuItem(divider=True),
-#     dbc.DropdownMenuItem("F"),
-# ]
-#
-# ExerciseAngina_items = [
-#     dbc.DropdownMenuItem("Y"),
-#     dbc.DropdownMenuItem(divider=True),
-#     dbc.DropdownMenuItem("N"),
-# ]
-#
-# ST_Slope_items = [
-#     dbc.DropdownMenuItem("Flat"),
-#     dbc.DropdownMenuItem("Up"),
-#     dbc.DropdownMenuItem("Down"),
-# ]
-#
-# ChestPainType = [
-#     dbc.DropdownMenuItem("ASY"),
-#     dbc.DropdownMenuItem("NAP"),
-#     dbc.DropdownMenuItem("ATA"),
-#     dbc.DropdownMenuItem("TA"),
-# ]
-
-
 sex_items = [
     'M', 'F'
 ]
@@ -102,9 +50,6 @@ ChestPainType = [
 RestingECG = ['Normal', 'ST', 'LVH']
 app.layout = html.Div([
     dbc.Row([html.H2(children='Predict Heart Disease')]),
-
-
-
 
     dbc.Row([
         dbc.Col(html.Label(children='Age'), width={"order": "first"}),
