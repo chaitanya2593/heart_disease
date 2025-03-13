@@ -13,13 +13,13 @@ app = dash.Dash(__name__)
 app.title = 'Machine Learning Model Deployment'
 server = app.server
 ### load ML model & Respective files ###########################################
-with open('dash_svm.pkl', 'rb') as f:
+with open('model/dash_svm.pkl', 'rb') as f:
     clf = pickle.load(f)
 
-with open('min_max_scaler.pkl', 'rb') as f:  # Python 3: open(..., 'wb')
+with open('model/min_max_scaler.pkl', 'rb') as f:  # Python 3: open(..., 'wb')
     min_max_scaler = pickle.load(f)
 
-with open('label_dict.pkl', 'rb') as f:  # Python 3: open(..., 'wb')
+with open('model/label_dict.pkl', 'rb') as f:  # Python 3: open(..., 'wb')
     label_dict = pickle.load(f)
 
 

@@ -57,6 +57,15 @@ Once the model has been build the same is deployed using the Heroku</p>
 - The model is tested locally just by invoking python file `python app.py`. 
 - Now it is more of app deployment in heroku
 
+### Local Setup 
+
+```
+pyenv install --skip-existing
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 ### Heroku deployment
 As a prerequsite, one should have the following files created 
 1. requirements.txt - with all the python packages required for app.
