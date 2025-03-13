@@ -1,5 +1,5 @@
 # Heart Disease Prediction
-# Use Case Introduction
+## Use Case Introduction
 
 <p>The main objective of the repository is to demonstrate the Application of SVM and optimising the model using the Random and Grid hyperparameter tuning. <br>
 Once the model has been build the same is deployed using the Heroku</p> 
@@ -74,10 +74,10 @@ pip install -r requirements.txt
     ```
 2. Open the browser and go to `http://localhost:8501/` to see the application.
 3. The application is now running locally.
+
    
 ## References:
-- https://dash.plotly.com/deployment
-- https://devcenter.heroku.com/articles/creating-apps
-
-
-
+- https://streamlit.io/
+- https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
+- https://makefiletutorial.com/#makefile-cookbook
+- https://scikit-learn.org/stable/modules/svm.html
