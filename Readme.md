@@ -1,5 +1,5 @@
 # Heart Disease Prediction
-# Use Case Introduction
+## Use Case Introduction
 
 <p>The main objective of the repository is to demonstrate the Application of SVM and optimising the model using the Random and Grid hyperparameter tuning. <br>
 Once the model has been build the same is deployed using the Heroku</p> 
@@ -57,25 +57,27 @@ Once the model has been build the same is deployed using the Heroku</p>
 - The model is tested locally just by invoking python file `python app.py`. 
 - Now it is more of app deployment in heroku
 
-### Heroku deployment
-As a prerequsite, one should have the following files created 
-1. requirements.txt - with all the python packages required for app.
-2. Procfile - an no extension file with command `web: gunicorn app:server` (if you are using different name for the main dash file please replace the same in the command)
+### Local Setup 
 
-#### Initialize  heroku
-In this step it is more about deploying the app in heroku app. 
+```
+pyenv install --skip-existing
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
 
+### Streamlit deployment
 
-> heroku create my-dash-app # change my-dash-app to a unique name<br>
-> git add . # add all files to git<br>
-> git commit -m 'Initial app boilerplate'<br>
-> git push heroku master # deploy code to heroku<br>
+1. Run the Streamlit application:
+    ```bash
+    streamlit run app.py
+    ```
+2. Open the browser and go to `http://localhost:8501/` to see the application.
+3. The application is now running locally.
 
-Once this is successfully done you should get the url to access the website. In my case it is - `https://hdapp2593.herokuapp.com/`
-
+   
 ## References:
-- https://dash.plotly.com/deployment
-- https://devcenter.heroku.com/articles/creating-apps
-
-
-
+- https://streamlit.io/
+- https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
+- https://makefiletutorial.com/#makefile-cookbook
+- https://scikit-learn.org/stable/modules/svm.html
