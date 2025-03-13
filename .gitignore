@@ -20,3 +20,41 @@ coverage_html
 pytest_results.xml
 pytest_results.html
 pytest_allure
+
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+*__pycache__
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Environments
+.env
+.env_backup
+.venv/
+.venv
+.env/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
