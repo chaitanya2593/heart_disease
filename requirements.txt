@@ -1,12 +1,12 @@
-dash==2.18.2
-dash-bootstrap-components==1.7.1
-Django==5.1.7
-django-heroku==0.3.1
+# EDA
 pandas==2.2.3
-pandas-stubs==2.2.3.250308
 scikit-learn==1.6.1
-gunicorn==23.0.0
+seaborn==0.11.2
+ipython==8.0.1
+plotly-express==0.4.1
+matplotlib==3.7.3
 
 
 # streamlit
 streamlit==1.37.0
+watchdog==4.0.0

@@ -66,22 +66,15 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Heroku deployment
-As a prerequsite, one should have the following files created 
-1. requirements.txt - with all the python packages required for app.
-2. Procfile - an no extension file with command `web: gunicorn app:server` (if you are using different name for the main dash file please replace the same in the command)
+### Streamlit deployment
 
-#### Initialize  heroku
-In this step it is more about deploying the app in heroku app. 
-
-
-> heroku create my-dash-app # change my-dash-app to a unique name<br>
-> git add . # add all files to git<br>
-> git commit -m 'Initial app boilerplate'<br>
-> git push heroku master # deploy code to heroku<br>
-
-Once this is successfully done you should get the url to access the website. In my case it is - `https://hdapp2593.herokuapp.com/`
-
+1. Run the Streamlit application:
+    ```bash
+    streamlit run app.py
+    ```
+2. Open the browser and go to `http://localhost:8501/` to see the application.
+3. The application is now running locally.
+   
 ## References:
 - https://dash.plotly.com/deployment
 - https://devcenter.heroku.com/articles/creating-apps
