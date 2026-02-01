@@ -68,4 +68,4 @@ if submit_button:
     status = update_output(age, restingbp, cholesterol, fastingbs, max_hr, oldpeak, restingecg_option, gender, excercise_angina_option, st_slope_option, chestpaintype_option)
     st.info(status)
 
-st.write("""Built with ❤️ by [Chaitanya Madduri](https://www.linkedin.com/in/v-s-chaitanya-madduri-2886447a/). Powered by Python 🐍 + Streamlit 🎈""")
+st.write("""Built by [Chaitanya Madduri](https://www.linkedin.com/in/v-s-chaitanya-madduri-2886447a/). Powered by Python 🐍 + Streamlit 🎈""")

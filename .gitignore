@@ -1,6 +1,5 @@
 /.idea/
 *.ipynb_checkpoints/
-/.venv/
 
 # Unit test / coverage reports
 htmlcov/
@@ -58,3 +57,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+/.venv/
+
+.DS_Store
+/uv.lock
