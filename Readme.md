@@ -1,5 +1,50 @@
 # Heart Disease Prediction
-## Use Case Introduction
+
+This repository contains a machine learning project for predicting heart disease using Support Vector Machine (SVM) and optimizing the model with Random and Grid hyperparameter tuning. The project is deployed using Streamlit for local testing and for online deployment.
+
+The app can be accessed using an API endpoint, which allows users to input their health data and receive a prediction on whether they are at risk of heart disease.
+
+## Quickstart
+
+### Local Setup
+
+ Install dependencies:
+   ```bash
+   uv sync
+   ```
+
+### Testing
+
+Run test and coverage
+```bash
+make test
+```
+
+### Code Research or Development
+
+To install the all dependencies
+```bash
+ uv sync --all-groups
+```
+
+For more information on uv , [uv-docs](https://docs.astral.sh/uv/).
+
+## Streamlit deployment
+
+1. Run the Streamlit application:
+    ```bash
+    streamlit run app.py
+    ```
+2. Open the browser and go to `http://localhost:8501/` to see the application.
+3. The application is now running locally.
+
+## API Deployment
+1. Run the API using uvicorn:
+    ```bash
+    python -m uvicorn api:app --reload
+    ```
+
+## Use Case Description
 
 <p>The main objective of the repository is to demonstrate the Application of SVM and optimising the model using the Random and Grid hyperparameter tuning. <br>
 Once the model has been build the same is deployed using the Heroku</p> 
@@ -10,7 +55,7 @@ Once the model has been build the same is deployed using the Heroku</p>
 
 - *Brief Summary of the dataset*: The level of analysis is by person and it has demographic information (Age, Sex), pyshical status of the patient (Chest pain, Resting blood preasure, cholesterol, fasting blood pressure, resting ECG, max heart rate, exercise angina, old peak, slope of peak) and the diagnostic data (Hearth disease).
 
-- *Objective of the Analysis*: Patient diagnostic prediction of hearth diseases using 11 varaibles from demographic and physical status of the patient.
+- *Objective of the Analysis*: Patient diagnostic prediction of hearth diseases using 11 variables from demographic and physical status of the patient.
 
 - *Methodology*: We will be using 2 Kernels (Polynomial and RBF) as our classification model, each kernel will be optimized for F2 and F0.5 indicators using GridSearch as optimization techniques
 
@@ -50,32 +95,7 @@ Once the model has been build the same is deployed using the Heroku</p>
 
 - Every dataset used can be found under the Index of heart disease datasets from UCI Machine Learning Repository on the following link: https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
 
-## Deployment
-- At first, during preprocessing the categorical variables label encoded and this encoding objects are stored by in label_dict.pkl and similar min_max_scaler.pkl file for the normalisation. 
-- Then creating an account in heruko for free. Then created a dash python file named app.py(for convenience I used the generic name). As DASH uses flask, teh app was built for a flask deployment and it doesn't support static files.
-- As third step I have designed code to capture all teh required fields for the model prediction.
-- The model is tested locally just by invoking python file `python app.py`. 
-- Now it is more of app deployment in heroku
 
-### Local Setup 
-
-```
-pyenv install --skip-existing
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Streamlit deployment
-
-1. Run the Streamlit application:
-    ```bash
-    streamlit run app.py
-    ```
-2. Open the browser and go to `http://localhost:8501/` to see the application.
-3. The application is now running locally.
-
-   
 ## References:
 - https://streamlit.io/
 - https://archive.ics.uci.edu/ml/machine-learning-databases/heart-disease/
