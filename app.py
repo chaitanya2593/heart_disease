@@ -44,8 +44,6 @@ st.sidebar.write("""
 """)
 
 
-
-
 with st.form(key='my_form'):
     st.header("Please fill out the following details:")
     age = st.number_input(label='Age (20-100)', min_value=20, max_value=100)
