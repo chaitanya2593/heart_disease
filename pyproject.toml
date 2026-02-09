@@ -1,6 +1,6 @@
 
 [project]
-name = "heart=disease-approaches"
+name = "heart-disease-approaches"
 version = "0.1.0"
 description = "The main objective of the repository is to demonstrate the Application of SVM and optimising the model using the Random and Grid hyperparameter tuning."
 requires-python = ">=3.13"
@@ -18,6 +18,10 @@ dependencies = [
     # streamlit
     "streamlit>=1.49.1",
     "watchdog==4.0.0",
+
+    #FastAPI
+    "fastapi[standard]==0.115.6",
+    "uvicorn==0.32.1",
 
 
 

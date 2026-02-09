@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Body
 from pydantic import BaseModel
 from heart_disease.predictor import update_output
 
@@ -28,14 +28,48 @@ class HeartDiseaseInput(BaseModel):
     fasting_bs: int
     max_hr: int
     oldpeak: float
-    resting_ecg: str
-    sex: str
-    exercise_angina: str
-    st_slope: str
-    chest_pain_type: str
+    resting_ecg: str  # Allowed: 'Normal', 'ST', 'LVH'
+    sex: str  # Allowed: 'M', 'F'
+    exercise_angina: str  # Allowed: 'N', 'Y'
+    st_slope: str  # Allowed: 'Up', 'Flat', 'Down'
+    chest_pain_type: str  # Allowed: 'ATA', 'NAP', 'ASY', 'TA'
 
-@app.post("/predict_heart_disease")
-def predict_heart_disease(input_data: HeartDiseaseInput):
+    class Config:
+        schema_extra = {
+            "example": {
+                "age": 55,
+                "resting_bp": 140,
+                "cholesterol": 250,
+                "fasting_bs": 1,
+                "max_hr": 150,
+                "oldpeak": 2.3,
+                "resting_ecg": "Normal",
+                "sex": "M",
+                "exercise_angina": "N",
+                "st_slope": "Flat",
+                "chest_pain_type": "ATA"
+            }
+        }
+
+
+@app.post("/predict", tags=["Prediction"])
+def predict_heart_disease(
+    input_data: HeartDiseaseInput = Body(
+        example={
+            "age": 55,
+            "resting_bp": 140,
+            "cholesterol": 250,
+            "fasting_bs": 1,
+            "max_hr": 150,
+            "oldpeak": 2.3,
+            "resting_ecg": "Normal",
+            "sex": "M",
+            "exercise_angina": "N",
+            "st_slope": "Flat",
+            "chest_pain_type": "ATA"
+        }
+    )
+):
     try:
         result = update_output(
             age=input_data.age,
@@ -50,7 +84,7 @@ def predict_heart_disease(input_data: HeartDiseaseInput):
             st_slope=input_data.st_slope,
             chest_pain_type=input_data.chest_pain_type
         )
-        return {"prediction": result}
+        return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
