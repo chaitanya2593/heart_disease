@@ -1,0 +1,17 @@
+# Default values for heart-disease-helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+components:
+- image:
+    deployment: 
+      enabled: true
+    service: 
+      enabled: true
+    comp_name: heart-disease
+    image_name: heartdisease
+    namespace: default
+    repository: 
+    tag: latest
+    targetport: "8501"
+    port: "80"
+    type: "ClusterIP"

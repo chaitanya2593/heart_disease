@@ -1,6 +1,6 @@
 ### Import Packages ########################################
 import streamlit as st
-from heart_disease.predictor import update_output
+from predictor import update_output
 ### Setup ###################################################
 # Title of the app
 st.set_page_config(page_title="Health Data Input Form", page_icon="🩺", layout="wide")

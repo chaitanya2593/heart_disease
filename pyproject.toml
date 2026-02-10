@@ -1,12 +1,8 @@
-
 [project]
-name = "heart=disease-approaches"
+name = "heart-disease-approaches"
 version = "0.1.0"
 description = "The main objective of the repository is to demonstrate the Application of SVM and optimising the model using the Random and Grid hyperparameter tuning."
 requires-python = ">=3.13"
-
-
-
 dependencies = [
     # basic EDA packages
     "pandas>=2.3.2",
@@ -14,13 +10,9 @@ dependencies = [
     "matplotlib>=3.10.5",
     "seaborn==0.13.2",
     "plotly-express==0.4.1",
-
     # streamlit
     "streamlit>=1.49.1",
     "watchdog==4.0.0",
-
-
-
 ]
 
 
